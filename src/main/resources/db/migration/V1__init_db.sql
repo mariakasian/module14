@@ -1,0 +1,11 @@
+CREATE TABLE note(
+id IDENTITY PRIMARY KEY,
+title VARCHAR(50) NOT NULL,
+content VARCHAR(300) NOT NULL
+);
+
+ALTER TABLE note
+    ADD CONSTRAINT title CHECK (LENGTH(title)>=3 AND LENGTH(title)<=50);
+
+ALTER TABLE note
+    ADD CONSTRAINT content CHECK (LENGTH(content)>=3 AND LENGTH(content)<=300);
